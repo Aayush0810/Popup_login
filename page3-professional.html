@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdContracts</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body onload="renderData()">
+    <section class="relative flex flex-wrap lg:h-screen lg:items-center">
+      <div
+        class="relative h-full w-full sm:h-96 lg:h-full lg:w-1/3 bg-[#E8533B] py-10 px-5 flex flex-col justify-between"
+      >
+        <img
+          src="./assets/img/Logo.png"
+          alt="EdContracts Logo"
+          width="200"
+          class="block cursor-pointer"
+          onclick="redirectHome()"
+        />
+        <div class="px-5 text-black text-5xl brandline">
+          <span class="text-white brandline">Bringing</span><br />
+          learn-to-earn <br /><span class="text-white brandline">to the</span>
+          real world
+        </div>
+      </div>
+      <div
+        class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-2/3 lg:px-8 lg:py-24 lg:h-screen overflow-auto flex justify-center items-center"
+      >
+        <div class="mx-auto max-w-md">
+          <h1 class="text-2xl font-bold sm:text-3xl" id="formHeading">
+            Select your courses
+          </h1>
+          <p class="mt-4 text-gray-50 text-gray-500" id="signUpSubheading">
+            Sign up to start earning money by improving your grades and learning
+            new skills
+          </p>
+          <div class="flex flex-col items-center gap-5 py-5 pt-9">
+            <p class="text-lg w-full">Choose your area of interest:</p>
+            <div class="flex w-full">
+              <button
+                id="dropdownBottomButtonInterest"
+                data-dropdown-toggle="dropdownBottomInterest"
+                class="text-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center w-1/2 flex justify-between border border-black"
+                type="button"
+              >
+                Area of Interest
+                <svg
+                  class="ml-2 w-4 h-4"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownBottomInterest"
+                class="hidden z-10 w-80 bg-white rounded divide-y divide-gray-100 shadow w-1/2 border border-black"
+              >
+                <ul
+                  class="py-1 text-sm text-gray-700 text-black overflow-y-auto h-32"
+                  aria-labelledby="dropdownBottomButtonInterest"
+                  id="areaOfInterestDropdownList"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      onclick="chooseAreaOfInterest(this)"
+                      id="course1"
+                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Course 1</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      onclick="chooseAreaOfInterest(this)"
+                      id="course2"
+                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Course 2</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      onclick="chooseAreaOfInterest(this)"
+                      id="course3"
+                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Course 3</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      onclick="chooseAreaOfInterest(this)"
+                      id="course4"
+                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Course 4</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-5 py-5">
+            <p class="text-lg w-full">
+              Select the relevant courses you want to improve on:
+            </p>
+            <div class="flex w-full">
+              <button
+                id="dropdownBottomButtonCourses"
+                data-dropdown-toggle="dropdownBottomCourses"
+                class="text-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center w-1/2 border border-black flex justify-between"
+                type="button"
+              >
+                Select Courses
+                <svg
+                  class="ml-2 w-4 h-4"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownBottomCourses"
+                class="hidden z-10 w-80 bg-white rounded divide-y divide-gray-100 shadow border border-black"
+              >
+                <input
+                  type="text"
+                  id="courses-search"
+                  class="block p-4 pl-10 w-full text-sm text-black bg-white border border-black border-x-0 border-t-0 focus:outline-none"
+                  onkeyup="searchInCoursesList(this)"
+                  placeholder="Search Courses"
+                />
+                <ul
+                  class="py-1 text-sm text-black overflow-y-auto h-48"
+                  aria-labelledby="dropdownBottomButtonCourses"
+                  id="allCoursesDropDownList"
+                ></ul>
+              </div>
+            </div>
+          </div>
+          <div class="text-sm w-2/3 justify-centre" id="coursesSelected"></div>
+          <div class="flex justify-center mt-8">
+            <button
+              type="button"
+              class="ml-3 inline-block rounded-2xl bg-[#E8533B] px-5 py-3 text-sm font-medium text-white w-1/2 text-white"
+              onclick="createAccount()"
+              id="createAccountBtn"
+            >
+              Create Account
+            </button>
+          </div>
+          <p class="mt-4 text-gray-50 hidden text-red-500" id="error"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="./assets/js/page3-student.js"></script>
+  </body>
+</html>

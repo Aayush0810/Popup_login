@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Mont-Bold";
+  src: url("../fonts/Mont-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Mont-Normal";
+  src: url("../fonts/Mont-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Mont-ExtraLight";
+  src: url("../fonts/Mont-ExtraLight.ttf");
+  font-weight: lighter;
+}
+
+* {
+  font-family: "Mont-Normal";
+}
+
+h1 {
+  font-family: "Mont-Bold";
+}
+
+.brandline {
+  font-family: "Mont-Bold";
+}
+
+.moodle {
+  display: flex;
+  justify-content: center;
+}
+
+.popafaa {
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 110;
+}
+
+.popafaa.active {
+  visibility: visible;
+  display: flex;
+  opacity: 1;
+  transform: 0.5s;
+}
+
+.popups {
+  top: 25%;
+  min-width: 30%;
+  margin: 0;
+  max-height: 350px;
+  display: flex;
+  position: absolute;
+  background: black;
+  align-items: center;
+  z-index: 110;
+  height: 100vh;
+}
+
+.tut#blur.active {
+  backdrop-filter: blur(10px);  
+  content: "";
+  position:fixed;
+  height: 100%; 
+  height: 100vh;
+  width: 100vw;
+  z-index: 105;
+}
+.tut#blur {
+  z-index: -5;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.crossed {
+  position: absolute;
+  color: #e8533b;
+  cursor: pointer;
+  display: block;
+  top:0;
+  right:0.4rem;
+  font-size: 30px;
+}
+
+@media screen and (max-width:1024px ) {
+  .popups {
+    top: 45%;
+  }
+  
+}

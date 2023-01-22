@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdContracts</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body onload="checkAuth()">
+    <section class="relative flex flex-wrap lg:h-screen lg:items-center">
+      <div
+        class="relative h-full w-full sm:h-96 lg:h-full lg:w-1/3 bg-[#E8533B] py-10 px-5 flex flex-col justify-between"
+      >
+        <img
+          src="./assets/img/Logo.png"
+          alt="EdContracts Logo"
+          width="200"
+          class="block"
+onclick="redirectHome()"
+        />
+        <div class="px-5 text-black text-5xl brandline">
+          <span class="text-white brandline">Bringing</span><br />
+          learn-to-earn <br /><span class="text-white brandline">to the</span>
+          real world
+        </div>
+      </div>
+      <div
+        class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-2/3 lg:px-8 lg:py-24 lg:h-screen overflow-auto"
+      >
+        <div class="mx-auto max-w-md">
+          <h1 class="text-2xl font-bold sm:text-3xl" id="formHeading">
+            Additional information
+          </h1>
+          <p class="mt-4 text-gray-50 text-gray-500" id="signUpSubheading">
+            In order to complete the registration process, we need you to
+            retrieve the access token from your school's Canvas LMS website.
+          </p>
+          <br>
+          <p class="mt-4 text-gray-50 text-gray-500" id="signUpSubheading">
+            This process takes 2 min and we will allow us to temporarily access
+            your course information (such as assignments and grades).
+          </p>
+          <br>
+          <p class="mt-4 text-gray-50 text-gray-500" id="signUpSubheading">
+            Please watch the following video and follow the instructions below:
+          </p>
+            <iframe
+              width="460"
+              height="259"
+              src="https://www.youtube.com/embed/cZ5cn8stjM0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              class="py-5"
+            ></iframe>
+          </p>
+
+          <div class="flex flex-col gap-5 w-full py-5">
+            <div class="w-full">
+              <label
+                for="accessToken"
+                class="block text-gray-700 text-xl font-bold mb-2"
+                >Access Token</label
+              >
+              <div class="relative">
+                <input
+                  type="text"
+                  class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm text-[#737579]"
+                  placeholder="Enter your access token"
+                  id="accessToken"
+                  name="accessToken"
+                  onkeyup="submitAccessToken()"
+                />
+              </div>
+              
+              </div>
+
+            <!-- <div class="text-center w-1/2 my-auto">
+              <button
+                type="button"
+                class="ml-3 inline-block rounded-2xl bg-[#E8533B] hover:bg-[#C43F2E] px-5 py-3 text-sm font-medium text-white w-1/2 text-white"
+                onclick="submitAccessToken()"
+                id="accessTokenBtn"
+              >
+                Submit Access Token
+              </button>
+            </div> -->
+            <div class="w-full">
+              <label
+                for="accessToken"
+                class="block text-gray-700 text-xl font-bold mb-2"
+                >School institutional email</label
+              >
+              <div class="relative">
+                <input
+                  type="text"
+                  class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm text-[#737579]"
+                  placeholder="Enter your school email"
+                  id="instituteEmail"
+                  name="instituteEmail"
+                />
+              </div>
+              
+              </div>
+            </div>
+          
+          <p class="block text-gray-900 text-xl font-bold mb-2">
+            Courses Selected
+          </p>
+          <div class="flex flex-row gap-5 w-full py-5">
+            <div class="flex w-full">
+              <button
+                id="dropdownBottomButton"
+                data-dropdown-toggle="dropdownBottom"
+                class="text-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex flex justify-between justify-center border border-black w-1/2"
+                type="button"
+              >
+                Select Courses
+                <svg
+                  class="ml-2 w-4 h-4"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownBottom"
+                class="hidden z-10 w-60 bg-white rounded divide-y divide-gray-100 shadow border border-black"
+              >
+                <ul
+                  class="py-1 text-sm text-gray-700 text-black overflow-y-auto h-28"
+                  aria-labelledby="dropdownBottomButton"
+                  id="courseListElement"
+                >
+                  Please enter your access token
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row gap-5 w-full py-5">
+            <div id="coursesSelected"></div>
+          </div>
+          <div class="flex justify-center mt-8">
+            <button
+              type="button"
+              class="ml-3 inline-block rounded-2xl bg-[#E8533B] px-5 py-3 text-sm font-medium text-white w-1/2 text-white"
+              onclick="createAccount(this)"
+              id="createAccountBtn"
+            >
+              Create Account
+            </button>
+          </div>
+          <p class="mt-4 text-gray-50 hidden text-red-500" id="error"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="./assets/js/page1.js"></script>
+  </body>
+</html>

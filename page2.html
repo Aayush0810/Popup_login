@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdContracts</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section class="relative flex flex-wrap lg:h-screen lg:items-center">
+      <div
+        class="relative h-full w-full sm:h-96 lg:h-full lg:w-1/3 bg-[#E8533B] py-10 px-5 flex flex-col justify-between"
+      >
+        <img
+          src="./assets/img/Logo.png"
+          alt="EdContracts Logo"
+          width="200"
+          class="block cursor-pointer"
+          onclick="redirectHome()"
+        />
+        <div class="px-5 text-black text-5xl brandline">
+          <span class="text-white brandline">Bringing</span><br />
+          learn-to-earn <br /><span class="text-white brandline">to the</span>
+          real world
+        </div>
+      </div>
+      <div
+        class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-2/3 lg:px-8 lg:py-24 lg:h-screen overflow-auto flex justify-center items-center"
+      >
+        <div class="mx-auto">
+          <h1 class="text-2xl font-bold sm:text-3xl" id="formHeading">
+            Please provide the following information
+          </h1>
+          <div class="flex flex-col py-5 gap-5">
+            <h3 class="text-lg">Country:</h3>
+
+            <div class="flex w-full">
+              <button
+                id="dropdownBottomButton"
+                data-dropdown-toggle="dropdownBottom"
+                class="bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center border border-black text-black w-1/2 flex justify-between"
+                type="button"
+              >
+                Select Country
+                <svg
+                  class="ml-2 w-4 h-4"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownBottom"
+                class="hidden z-10 w-80 bg-white rounded divide-y divide-gray-100 shadow border border-black w-1/2"
+              >
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-200 overflow-y-auto h-48"
+                  aria-labelledby="dropdownBottomButton"
+                  id="allCountryListDropdown"
+                ></ul>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row gap-5 items-center py-5 mt-10">
+            <p class="text-lg">What is your current occupation:</p>
+            <div class="flex flex-row gap-5">
+              <div class="flex items-center mb-4 mt-4">
+                <input
+                  id="default-radio-1"
+                  type="radio"
+                  value="Student"
+                  name="default-radio"
+                  class="w-4 h-4 text-[#C43F2E] bg-gray-100 border-gray-300"
+                  onclick="selectOccupation(this)"
+                />
+                <label
+                  for="default-radio-1"
+                  class="ml-2 text-sm font-medium text-gray-700"
+                  >Student</label
+                >
+              </div>
+
+              <div class="flex items-center">
+                <input
+                  id="default-radio-2"
+                  type="radio"
+                  value="Professional"
+                  name="default-radio"
+                  class="w-4 h-4 text-[#C43F2E] bg-gray-100 border-gray-300"
+                  onclick="selectOccupation(this)"
+                />
+                <label
+                  for="default-radio-2"
+                  class="ml-2 text-sm font-medium text-gray-700"
+                  >Professional</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8" id="occupationBtn">
+            <button
+              type="button"
+              class="ml-3 inline-block rounded-2xl bg-[#E8533B] px-5 py-3 text-sm font-medium text-white w-1/2 text-white"
+              onclick="submitData(this)"
+              id="submitOccupationBtn"
+            >
+              Continue
+            </button>
+          </div>
+          <p class="mt-4 text-gray-50 hidden text-red-500" id="error"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="./assets/js/page2.js"></script>
+  </body>
+</html>

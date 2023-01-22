@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdContracts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section
+      class="relative flex flex-wrap flex-reverse lg:h-screen lg:items-center"
+    >
+      <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/3 bg-[#DB4E39]">
+        <img src="./img/Logo.png" alt="EdContracts Logo" />
+      </div>
+      <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-2/3 lg:px-8 lg:py-18">
+        <div class="mx-auto max-w-md">
+          <h1 class="text-2xl font-bold sm:text-3xl">Register with us</h1>
+
+          <p class="mt-4 text-gray-50 hidden text-red-700" id="error"></p>
+        </div>
+
+        <form class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+          <div>
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2"
+              >Name</label
+            >
+            <div class="relative">
+              <input
+                type="text"
+                class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                placeholder="Enter Name"
+                id="name"
+              />
+
+              <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-5 w-5 text-gray-400"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="email"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Email</label
+            >
+            <div class="relative">
+              <input
+                type="email"
+                class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                placeholder="Enter email"
+                id="email"
+              />
+
+              <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="username"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Username</label
+            >
+            <div class="relative">
+              <input
+                type="text"
+                class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                placeholder="Enter Username"
+                id="username"
+              />
+
+              <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-5 w-5 text-gray-400"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="password"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Password</label
+            >
+            <div class="relative">
+              <input
+                type="password"
+                class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                placeholder="Enter password"
+                id="password"
+              />
+
+              <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between flex-col gap-5">
+            <button
+              type="button"
+              class="ml-3 inline-block rounded-2xl bg-blue-500 px-5 py-3 text-sm font-medium text-white w-full"
+              onclick="signup()"
+              id="submitBtn"
+            >
+              Sign Up
+            </button>
+            <button
+              type="button"
+              class="ml-3 inline-block rounded-2xl bg-white px-5 py-3 text-sm font-medium text-[#0e76a8] w-full border-black border border-solid"
+              onclick="signup()"
+              id="submitBtn"
+            >
+              <span
+                ><img src="./img/LI-In-Bug.png" width="18" class="inline-block"
+              /></span>
+              Sign Up with LinkedIn
+            </button>
+            <p class="text-sm text-gray-500">
+              Already registered?
+              <a href="/" class="underline">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="./js/signup.js"></script>
+  </body>
+</html>
